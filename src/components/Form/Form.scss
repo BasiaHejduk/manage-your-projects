@@ -1,0 +1,54 @@
+@import "../../common/constants.scss";
+
+.form {
+    padding: 50px;
+
+    &__form {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 1fr;
+        @media (min-width: $tablet) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__input-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-self: center;
+        @media (min-width: $tablet) {
+            flex-direction: row;
+        }
+        &--desc {
+            @media (min-width: $tablet) {
+                grid-column: 1/4;
+                justify-self: center;
+            }
+        }
+    }
+
+    &__label {
+
+    }
+
+    &__input {
+        height: 30px;
+        width: 200px;
+        border: 1px solid $overcast;
+        border-radius: 5px;
+        background-color: lighten($paper, 10%);
+    }
+
+    &__button {
+        height: 30px;
+        width: 200px;
+        border: none;
+        border-radius: 10px;
+        justify-self: center;
+        background-color: $lavendar;
+        @media (min-width: $tablet) {
+            grid-column: 1/4;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+@import "../../common/constants.scss";
+
+.projects-container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 20px;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr;
+    @media(min-width: $tablet) {
+        background-color: $dusty;
+        padding: 50px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}

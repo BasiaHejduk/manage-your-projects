@@ -1,0 +1,8 @@
+@import "./common/constants.scss";
+
+.App {
+  min-height: 100vh;
+  background-color: $paper;
+  text-align: center;
+  font-family: $open-sans;
+}

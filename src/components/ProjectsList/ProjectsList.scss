@@ -1,0 +1,10 @@
+@import "../../common/constants.scss";
+
+.projects-list {
+    min-height: 200px;
+    background-color: $overcast;
+    border-radius: 20px;
+    @media (min-width: $tablet) {
+        min-height: 400px;
+    }
+}
