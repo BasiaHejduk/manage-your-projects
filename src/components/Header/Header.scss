@@ -1,7 +1,10 @@
 @import "../../common/constants.scss";
 
 .header {
-    padding: 50px;
     color: $lavendar;
+    padding: 20px;
     // background-color: $dusty;
+    @media (min-width: $tablet) {
+        padding: 50px;
+    }
 }

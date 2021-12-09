@@ -6,7 +6,6 @@ const ProjectsContainer: React.FC = () => {
         <section className="projects-container">
             <ProjectsList/>
             <ProjectsList/>
-            <ProjectsList/>
         </section>
     )
 };

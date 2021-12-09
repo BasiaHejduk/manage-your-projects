@@ -3,6 +3,7 @@ import "./Form.scss";
 const Form = () => {
     return (
         <section className="form">
+            <h2 className="form__header">CREATE YOUR PROJECT:</h2>
             <form className="form__form">
                 <div className="form__input-wrapper">
                     <label className="form__label">Project Name: </label>
@@ -18,7 +19,7 @@ const Form = () => {
                 </div>
                 <div className="form__input-wrapper form__input-wrapper--desc">
                     <label className="form__label">Description: </label>
-                    <input className="form__input" type="textarea"></input>
+                    <textarea className="form__input form__input--desc"></textarea>
                 </div>
                 <button className="form__button">ADD A NEW PROJECT</button>
             </form>

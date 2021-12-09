@@ -1,10 +1,21 @@
 @import "../../common/constants.scss";
 
-.projects-list {
+.projects {
     min-height: 200px;
     background-color: $overcast;
+    border: 1px solid $overcast;
     border-radius: 20px;
     @media (min-width: $tablet) {
         min-height: 400px;
+    }
+
+    &__header {
+        font-size: 20px;
+        color: $paper;
+        margin: 20px auto;
+    }
+
+    &__list {
+        list-style: none;
     }
 }

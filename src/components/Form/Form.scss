@@ -1,14 +1,26 @@
 @import "../../common/constants.scss";
 
 .form {
-    padding: 50px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 0;
 
+    &__header {
+        font-size: 24px;
+        font-weight: 700;
+        color: $lavendar;
+        margin-bottom: 20px;
+        @media (min-width: $tablet) {
+            margin-bottom: 30px;
+        }
+    }
+    
     &__form {
         display: grid;
         grid-gap: 20px;
         grid-template-columns: 1fr;
         @media (min-width: $tablet) {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 
@@ -16,39 +28,67 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-self: center;
         @media (min-width: $tablet) {
             flex-direction: row;
         }
         &--desc {
             @media (min-width: $tablet) {
-                grid-column: 1/4;
-                justify-self: center;
+                height: 100%;
+                grid-column: 2/3;
+                grid-row: 1/4;
+                align-self: flex-start;
             }
         }
     }
 
     &__label {
-
+        width: 160px;
+        text-align: center;
+        color: $lavendar;
+        font-weight: 500;
+        margin-bottom: 5px;
+        @media (min-width: $tablet) {
+            align-self: flex-start;
+            text-align: end;
+            margin-right: 10px;
+        }
     }
 
     &__input {
         height: 30px;
-        width: 200px;
+        width: 250px;
         border: 1px solid $overcast;
         border-radius: 5px;
         background-color: lighten($paper, 10%);
+        padding: 5px;
+        text-align: center;
+        font-size: 14px;
+        font-family: $open-sans;
+        &--desc {
+            height: 100px;
+            text-align: start;
+            @media (min-width: $tablet) {
+                height: 100%;
+                width: 300px;
+            }
+        }
     }
 
     &__button {
-        height: 30px;
-        width: 200px;
+        height: 50px;
+        width: 250px;
         border: none;
         border-radius: 10px;
         justify-self: center;
         background-color: $lavendar;
+        color: $paper;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
         @media (min-width: $tablet) {
-            grid-column: 1/4;
+            grid-column: 1/3;
+            width: 300px;
+            margin-top: 30px;
         }
     }
 }

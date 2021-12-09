@@ -1,0 +1,65 @@
+@import "../../common/constants.scss";
+
+.project {
+    border-radius: 10px;
+    background-color: $dusty;
+    margin: 20px;
+    padding: 10px 20px;
+    
+    &__header {
+        font-size: 16px;
+        font-weight: 500;
+    }
+    
+    &__details-wrapper {
+        display: grid;
+        grid-gap:  0 10px;
+        grid-template-columns: 1fr;
+        @media (min-width: $tablet) {
+            grid-template-columns: 3fr 1fr;
+        }
+    }
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    &__details-item {
+        text-align: start;
+        font-size: 12px;
+        font-weight: 400;
+        margin: 5px 0;
+        text-align: center;
+        @media (min-width: $tablet) {
+            text-align: start;
+        }
+    }
+
+    &__deadline-item {
+
+    }
+
+    &__buttons-wrapper {
+        display: flex;
+        flex-direction: column;
+        @media (min-width: $tablet) {
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    }
+
+    &__button {
+        height: 30px;
+        width: 100%;
+        border: none;
+        border-radius: 10px;
+        background-color: $lavendar;
+        color: $paper;
+        font-weight: 600;
+        margin-top: 10px;
+        @media (min-width: $tablet) {
+            width: 150px;
+        }
+    }
+}

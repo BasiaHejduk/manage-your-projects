@@ -9,9 +9,9 @@
     grid-gap: 20px;
     grid-template-columns: 1fr;
     @media(min-width: $tablet) {
-        background-color: $dusty;
+        // background-color: $dusty;
         padding: 50px;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
 }
