@@ -1,14 +1,25 @@
 import ProjectItem from "../ProjectItem/ProjectItem";
+import { Project } from "../../common/project-mode";
 import "./ProjectsList.scss";
 
-const ProjectsList: React.FC = () => {
+interface ProjectListProps {
+    title: string,
+    projects: Project[]
+}
+
+const ProjectsList: React.FC<ProjectListProps> = ({title, projects}) => {
     return (
         <div className="projects">
-            <h5 className="projects__header">NEW PROJECTS</h5>
+            <h5 className="projects__header">{title} PROJECTS</h5>
             <ul className="projects__list">
+                {
+                    projects.map((project, i) => {
+                        return <li key={i}><ProjectItem project={project} title={title}/></li>
+                    })
+                }
+                {/* <ProjectItem/>
                 <ProjectItem/>
-                <ProjectItem/>
-                <ProjectItem/>
+                <ProjectItem/> */}
             </ul>
         </div>
     )
