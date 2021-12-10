@@ -58,6 +58,7 @@
         color: $paper;
         font-weight: 600;
         margin-top: 10px;
+        cursor: pointer;
         @media (min-width: $tablet) {
             width: 150px;
         }

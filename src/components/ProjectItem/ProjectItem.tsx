@@ -5,15 +5,24 @@ interface ProjectItemProps {
   project: Project;
   title: string;
   addProject: (project: Project) => void;
+  deleteProject: (project: Project) => void;
 }
 
-const ProjectItem: React.FC<ProjectItemProps> = ({ project, title, addProject }) => {
+const ProjectItem: React.FC<ProjectItemProps> = ({
+  project,
+  title,
+  addProject,
+  deleteProject,
+}) => {
 
-  const changeStatusHandler = (project: Project) => {
+  const changeStatusHandler = () => {
     project.statusActive = !project.statusActive;
     addProject(project);
   };
 
+  const deleteHandler = () => {
+    deleteProject(project);
+  };
 
   return (
     <div className="project">
@@ -35,8 +44,14 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, title, addProject })
         </div>
       </div>
       <div className="project__buttons-wrapper">
-        <button className="project__button" onClick={()=>changeStatusHandler(project)}>
+        <button
+          className="project__button"
+          onClick={changeStatusHandler}
+        >
           SET AS {title === "ONGOING" ? "FINISHED" : "ONGOING"}
+        </button>
+        <button className="project__button" onClick={deleteHandler}>
+          DELETE
         </button>
       </div>
     </div>

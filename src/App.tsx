@@ -23,6 +23,10 @@ const App: React.FC = () => {
     }
   };
 
+  const deleteProject = (projectToDelete: Project) => {
+    setFinishedProjects(prevState => prevState.filter(project => project.name !== projectToDelete.name));
+    setOngoingProjects(prevState => prevState.filter(project => project.name !== projectToDelete.name));
+  }
 
   return (
     <div className="App">
@@ -32,6 +36,7 @@ const App: React.FC = () => {
         ongoing={ongoingProjects}
         finished={finishedProjects}
         addProject={addProject}
+        deleteProject={deleteProject}
       />
     </div>
   );

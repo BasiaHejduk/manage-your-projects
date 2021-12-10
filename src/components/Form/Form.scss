@@ -74,6 +74,11 @@
         }
     }
 
+    &__alert {
+        color: red;
+        grid-column: 1/3;
+    }
+
     &__button {
         height: 50px;
         width: 250px;
