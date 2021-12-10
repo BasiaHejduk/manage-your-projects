@@ -3,22 +3,28 @@ import { Project } from "../../common/project-mode";
 import "./Form.scss";
 
 interface FormProps {
-    addNewProject: (project: Project) => void;
+  addProject: (project: Project) => void;
 }
 
-const Form: React.FC<FormProps> = ({addNewProject}) => {
+const Form: React.FC<FormProps> = ({ addProject }) => {
   const [projectName, setProjectName] = useState<string>("");
   const [persons, setPersons] = useState<string>("");
   const [deadline, setDeadline] = useState<string>("");
   const [description, setDescription] = useState<string>("");
 
   const addProjectHandler = (event: React.FormEvent) => {
-      event.preventDefault();
-      addNewProject({name: projectName, persons: persons, description: description, deadline: deadline});
-      setProjectName("");
-      setPersons("");
-      setDeadline("");
-      setDescription("");
+    event.preventDefault();
+    addProject({
+      name: projectName,
+      persons: persons,
+      description: description,
+      deadline: deadline,
+      statusActive: true
+    });
+    setProjectName("");
+    setPersons("");
+    setDeadline("");
+    setDescription("");
   };
 
   return (
@@ -60,10 +66,7 @@ const Form: React.FC<FormProps> = ({addNewProject}) => {
             onChange={(e) => setDescription(e.target.value)}
           ></textarea>
         </div>
-        <button
-          className="form__button"
-          type="submit"
-        >
+        <button className="form__button" type="submit">
           ADD A NEW PROJECT
         </button>
       </form>
