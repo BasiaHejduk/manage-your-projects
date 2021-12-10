@@ -1,4 +1,5 @@
-import { Project } from "../../common/project-mode";
+import { Project } from "../../common/project-model";
+import Counter from "../Counter/Counter";
 import "./ProjectItem.scss";
 
 interface ProjectItemProps {
@@ -33,14 +34,10 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
             DESCRIPTION: {project.description}
           </p>
           <p className="project__details-item">PERSONS: {project.persons}</p>
+          <p className="project__details-item">DEADLINE: {project.deadline}</p>
         </div>
         <div className="project__details project__details--right">
-          <div className="project__details-item project__deadline">
-            DEADLINE: {project.deadline}
-            <p className="project__deadline-item">days: 152</p>
-            <p className="project__deadline-item">hours: 14</p>
-            <p className="project__deadline-item">seconds: 46</p>
-          </div>
+          <Counter deadline={project.deadline}/>
         </div>
       </div>
       <div className="project__buttons-wrapper">

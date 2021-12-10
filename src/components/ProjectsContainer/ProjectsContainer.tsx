@@ -1,4 +1,4 @@
-import { Project } from "../../common/project-mode";
+import { Project } from "../../common/project-model";
 import ProjectsList from "../ProjectsList/ProjectsList";
 import "./ProjectsContainer.scss";
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Project } from "../../common/project-mode";
+import { Project } from "../../common/project-model";
 import { validate, Validatable } from "../../common/validation";
 import "./Form.scss";
 
@@ -87,7 +87,7 @@ const Form: React.FC<FormProps> = ({ addProject }) => {
           <label className="form__label">Deadline: </label>
           <input
             className="form__input"
-            type="text"
+            type="date"
             value={deadline}
             onChange={(e) => setDeadline(e.target.value)}
           ></input>

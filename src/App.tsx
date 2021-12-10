@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Form from "./components/Form/Form";
 import Header from "./components/Header/Header";
 import ProjectsContainer from "./components/ProjectsContainer/ProjectsContainer";
-import { Project } from "./common/project-mode";
+import { Project } from "./common/project-model";
 import "./App.scss";
 import "./common/reset.scss";
 
@@ -10,7 +10,6 @@ import "./common/reset.scss";
 const App: React.FC = () => {
   const [ongoingProjects, setOngoingProjects] = useState<Project[]>([]);
   const [finishedProjects, setFinishedProjects] = useState<Project[]>([]);
-
   
   const addProject = (newProject: Project) => {
     if (newProject.statusActive) {
@@ -26,7 +25,7 @@ const App: React.FC = () => {
   const deleteProject = (projectToDelete: Project) => {
     setFinishedProjects(prevState => prevState.filter(project => project.name !== projectToDelete.name));
     setOngoingProjects(prevState => prevState.filter(project => project.name !== projectToDelete.name));
-  }
+  };
 
   return (
     <div className="App">
